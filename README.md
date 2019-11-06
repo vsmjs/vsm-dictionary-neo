@@ -112,7 +112,7 @@ For the above URL, we provide a brief description for each sub-part:
 entries we are searching/filtering for
     - Note that each bioentity has a type, and all the possible returned types 
     can be clustered to 4 categories: **proteins, genes, complexes and RNAs**.
-3. The third part (_q=\*:\*_) means that we will perform a query on any field and any string 
+3. The third part (_q=\*:\*_) means that we will perform a query on any field and search for any string 
 4. The fourth part means that we will filter the query to specific entries: those
 that have *either* the bioentity field equal to `RNAcentral:URS0000530EBF_9606` 
 or equal to `UniProtKB:P35222`. 
@@ -130,7 +130,8 @@ the entries that we will map to VSM-entry properties (*fl=...*).
 (alphabetically from A to Z).
 8. The last part defines the format of the returned data (JSON).
 
-Otherwise, we ask for all ids (by default **id/bioentity sorted**) with this query:
+Otherwise, we ask for all CURIEs (by default **CURIE/bioentity sorted**) with 
+this query that does not filter on the bioentities requested:
 ```
 http://golr-aux.geneontology.io/solr/select?fq=document_category:bioentity&q=*:*&fl=bioentity,bioentity_label,bioentity_name,synonym_searchable,taxon,taxon_label,type&rows=3&start=0&sort=bioentity%20asc&wt=json
 ```
@@ -139,16 +140,14 @@ When using NEO's Solr API, we get back a JSON object with a *response*
 property, whose value is an object with a *docs* property. The *docs*'s 
 value is an array of objects (the entries). Every entry object has as attributes 
 the *fields* requested in the query above. We now provide a mapping of the 
-attributes values to VSM-entry specific properties:
-
-bioentity,bioentity_label,bioentity_name,synonym_searchable,taxon,taxon_label,type
+attributes' values to VSM-entry specific properties:
 
 NEO Solr field | Type | Required | VSM entry/match object property | Notes  
 :---:|:---:|:---:|:---:|:---:
 `bioentity` | String | YES | `id`, `terms[i].str` | The VSM entry id is the CURIE string
 `bioentity_label` | String | NO | `terms[0].str`, `str` |  
 `bioentity_name` | String | NO | `descr` | 
-`synonym_searchable` | Array | NO | `terms[i].str` | We map the whole array 
+`synonym_searchable` | Array | NO | `terms[i].str` | We map the whole array if present
 `taxon`, `taxon_label` | String | NO | `z.species` | Example: `Homo sapiens; 9606` 
 `type` | String | NO | `z.type` | Example types: `protein`, `transcript`, `gene` 
 
@@ -183,16 +182,17 @@ there is **no sorting on the server side** and that we try to find `tp53` matche
 with a wildcard query search (as `tp53*`) in **4 fields** using `OR` logic: 
 `bioentity_label_searchable`, `bioentity_name_searchable`, `synonym_searchable` and `taxon_label_searchable`.
 If the request string `str` is comprised of multiple words (separated by space)
-we search for each word in the 4 fields previously mentioned and we combine the 
+**we search for each word in the 4 fields** previously mentioned and we combine the 
 search results with `AND` logic. Also if a word has any of the following special
-characters: `+ - & | ! ( ) { } [ ] ^ " ~ * ? : /`, we escape them and put the
+characters: `+ - & | ! ( ) { } [ ] ^ " ~ * ? : /`, we escape them (according to 
+the standard Solr Query Parser) and put the
 resulting word in quotes. For example, if `str` = `Catenin beta-1 sapiens`,
-the query field option in the URL query would be:
+the query field option in the above URL query would be:
 ```
 fq=(bioentity_label_searchable:Catenin* bioentity_name_searchable:Catenin* synonym_searchable:Catenin* taxon_label_searchable:Catenin*) AND
    (bioentity_label_searchable:"beta\-1*" bioentity_name_searchable:"beta\-1*" synonym_searchable:"beta\-1*" taxon_label_searchable:"beta\-1*") AND 
-   (bioentity_label_searchable:"sapiens*" bioentity_name_searchable:"sapiens*" synonym_searchable:"OK\/SW\-cl.35*" taxon_label_searchable:"sapiens*")
+   (bioentity_label_searchable:"sapiens*" bioentity_name_searchable:"sapiens*" synonym_searchable:"sapiens*" taxon_label_searchable:"sapiens*")
 ```
 
-Searching in all of 4 fields above gives you the flexibility to appropriately 
+Searching in all of 4 fields gives the user the flexibility to appropriately 
 choose the words in the `str` that will filter/minimize the returned results. 
