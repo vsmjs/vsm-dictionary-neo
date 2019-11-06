@@ -191,7 +191,7 @@ the query field option in the above URL query would be:
 ```
 fq=(bioentity_label_searchable:Catenin* bioentity_name_searchable:Catenin* synonym_searchable:Catenin* taxon_label_searchable:Catenin*) AND
    (bioentity_label_searchable:"beta\-1*" bioentity_name_searchable:"beta\-1*" synonym_searchable:"beta\-1*" taxon_label_searchable:"beta\-1*") AND 
-   (bioentity_label_searchable:"sapiens*" bioentity_name_searchable:"sapiens*" synonym_searchable:"sapiens*" taxon_label_searchable:"sapiens*")
+   (bioentity_label_searchable:sapiens* bioentity_name_searchable:sapiens* synonym_searchable:sapiens* taxon_label_searchable:sapiens*)
 ```
 
 Searching in all of 4 fields gives the user the flexibility to appropriately 

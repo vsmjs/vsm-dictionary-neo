@@ -7,7 +7,7 @@ const DictionaryNeo = require('../src/DictionaryNeo');
 
 const dict = new DictionaryNeo({log: true});
 
-dict.getEntryMatchesForString('gene rna', { page: 1, perPage: 30 },
+dict.getEntryMatchesForString('Catenin beta-1 sapiens', { page: 1, perPage: 30 },
   (err, res) => {
     if (err) console.log(JSON.stringify(err, null, 4));
     else {
