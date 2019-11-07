@@ -172,7 +172,7 @@ an **empty array** of match objects is returned.
 Otherwise, an example of a URL string that is being built and send to NEO's Solr
  Web Service when requesting for `tp53`, is:
 ```
-http://golr-aux.geneontology.io/solr/select?fq=document_category:bioentity&q=:*:&fq=(bioentity_label_searchable:tp53* bioentity_name_searchable:tp53* synonym_searchable:tp53* taxon_label_searchable:tp53*)&fl=bioentity,bioentity_label,bioentity_name,synonym_searchable,taxon,taxon_label,type&rows=30&start=0&wt=json
+http://golr-aux.geneontology.io/solr/select?fq=document_category:bioentity&q=*:*&fq=(bioentity_label_searchable:tp53* bioentity_name_searchable:tp53* synonym_searchable:tp53* taxon_label_searchable:tp53*)&fl=bioentity,bioentity_label,bioentity_name,synonym_searchable,taxon,taxon_label,type&rows=30&start=0&wt=json
 ```
 
 The fields requested are the same as in the `getEntries(options, cb)` 
