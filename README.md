@@ -1,7 +1,7 @@
 # vsm-dictionary-neo
 
 <!-- badges: start -->
-<!--[![Travis build status](https://travis-ci.org/vsmjs/vsm-dictionary-neo.svg?branch=master)](https://travis-ci.org/vsm-dictionary/) -->
+[![Travis build status](https://travis-ci.org/vsmjs/vsm-dictionary-neo.svg?branch=master)](https://travis-ci.org/vsmjs/vsm-dictionary-neo)
 [![npm version](https://img.shields.io/npm/v/vsm-dictionary-neo)](https://www.npmjs.com/package/vsm-dictionary-neo)
 [![Downloads](https://img.shields.io/npm/dm/vsm-dictionary-neo)](https://www.npmjs.com/package/vsm-dictionary-neo)
 <!-- badges: end -->
