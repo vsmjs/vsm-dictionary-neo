@@ -18,7 +18,7 @@ and complexes) into VSM-specific format.
 ## Example use
 
 Create a `test.js` file and include this code:
-
+    
 ```javascript
 const DictionaryNeo = require('./DictionaryNeo');
 const dict = new DictionaryNeo({log: true});
