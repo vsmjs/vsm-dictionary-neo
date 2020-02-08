@@ -202,3 +202,7 @@ fq=(bioentity_label_searchable:Catenin* bioentity_name_searchable:Catenin* synon
 
 Searching in all of 4 fields gives the user the flexibility to appropriately 
 choose the words in the `str` that will filter/minimize the returned results. 
+
+## License
+
+This project is licensed under the AGPL license - see [LICENSE.md](LICENSE.md).
