@@ -1,7 +1,7 @@
 # vsm-dictionary-neo
 
 <!-- badges: start -->
-[![Travis build status](https://travis-ci.org/vsmjs/vsm-dictionary-neo.svg?branch=master)](https://travis-ci.org/vsmjs/vsm-dictionary-neo)
+[![Build Status](https://travis-ci.com/UniBioDicts/vsm-dictionary-neo.svg?branch=master)](https://travis-ci.com/UniBioDicts/vsm-dictionary-neo)
 [![npm version](https://img.shields.io/npm/v/vsm-dictionary-neo)](https://www.npmjs.com/package/vsm-dictionary-neo)
 [![Downloads](https://img.shields.io/npm/dm/vsm-dictionary-neo)](https://www.npmjs.com/package/vsm-dictionary-neo)
 <!-- badges: end -->
@@ -14,6 +14,10 @@ of the 'VsmDictionary' parent-class/interface (from the package
 the [Noctua Entity Ontology's (NEO) Solr Web Service](http://golr-aux.geneontology.io) 
 to translate information about different types of bioentites (proteins, genes, RNAs 
 and complexes) into VSM-specific format.
+
+## Install
+
+Run: `npm install`
 
 ## Example use
 
