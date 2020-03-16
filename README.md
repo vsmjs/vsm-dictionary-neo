@@ -2,8 +2,10 @@
 
 <!-- badges: start -->
 [![Build Status](https://travis-ci.com/UniBioDicts/vsm-dictionary-neo.svg?branch=master)](https://travis-ci.com/UniBioDicts/vsm-dictionary-neo)
+[![codecov](https://codecov.io/gh/UniBioDIcts/vsm-dictionary-neo/branch/master/graph/badge.svg)](https://codecov.io/gh/UniBioDIcts/vsm-dictionary-neo)
 [![npm version](https://img.shields.io/npm/v/vsm-dictionary-neo)](https://www.npmjs.com/package/vsm-dictionary-neo)
 [![Downloads](https://img.shields.io/npm/dm/vsm-dictionary-neo)](https://www.npmjs.com/package/vsm-dictionary-neo)
+[![License](https://img.shields.io/npm/l/vsm-dictionary-neo)](#license)
 <!-- badges: end -->
 
 ## Summary
