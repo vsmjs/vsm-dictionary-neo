@@ -12,7 +12,7 @@
 
 `vsm-dictionary-neo` is an implementation 
 of the 'VsmDictionary' parent-class/interface (from the package
-[`vsm-dictionary`](https://github.com/vsmjs/vsm-dictionary)), that uses 
+[`vsm-dictionary`](https://github.com/vsm/vsm-dictionary)), that uses 
 the [Noctua Entity Ontology's (NEO) Solr Web Service](http://golr-aux.geneontology.io) 
 to translate information about different types of bioentites (proteins, genes, RNAs 
 and complexes) into VSM-specific format.
@@ -68,7 +68,7 @@ header of an HTML file.
 
 Like all VsmDictionary subclass implementations, this package follows
 the parent class
-[specification](https://github.com/vsmjs/vsm-dictionary/blob/master/Dictionary.spec.md).
+[specification](https://github.com/vsm/vsm-dictionary/blob/master/Dictionary.spec.md).
 In the next sections we will explain the mapping between the data 
 offered by NEO's Solr Web Service and the corresponding VSM objects. 
 NEO's API is based on [Solr](https://lucene.apache.org/solr/).
