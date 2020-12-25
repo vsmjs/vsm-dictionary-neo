@@ -1,6 +1,6 @@
 {
   "name": "vsm-dictionary-neo",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Implementation of a VSM-dictionary that uses the Noctua Entity Ontology's (NEO) Solr Web Service to get information about different types of bioentites",
   "main": "src/DictionaryNeo.js",
   "scripts": {
